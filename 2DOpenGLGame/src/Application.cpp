@@ -17,7 +17,7 @@ int main(void)
 {
     /* Define bounds */
     float MAXDISTANCE = 0.9f;
-    float NUMBEROFGRIDS = 3.0f;
+    float NUMBEROFGRIDS = 4.0f;
     float SPACING = 0.05f;
     std::vector<float> topLeft = { -0.9f, 0.9f };
     std::vector<float> topRight = { 0.9f, 0.9f };
@@ -52,10 +52,12 @@ int main(void)
         /*Rows*/
         std::vector<float> rectangleTopleft;
         std::vector<float> rectangleBottomRight;
-        for (float i = MAXDISTANCE * 2 / NUMBEROFGRIDS; i <= MAXDISTANCE * 2; i += MAXDISTANCE * 2 / NUMBEROFGRIDS) {
-            rectangleTopleft = { -MAXDISTANCE + SPACING + i - (MAXDISTANCE * 2 / NUMBEROFGRIDS), MAXDISTANCE };
-            rectangleBottomRight = { -MAXDISTANCE + i - SPACING, topRight.at(1) / NUMBEROFGRIDS };
-            drawRectangle(rectangleTopleft, rectangleBottomRight);
+        for (float ii = MAXDISTANCE * 2 / NUMBEROFGRIDS; ii <= MAXDISTANCE * 2; ii += MAXDISTANCE * 2 / NUMBEROFGRIDS) {
+            for (float i = MAXDISTANCE * 2 / NUMBEROFGRIDS; i <= MAXDISTANCE * 2; i += MAXDISTANCE * 2 / NUMBEROFGRIDS) {
+                rectangleTopleft = { -MAXDISTANCE + SPACING + i - (MAXDISTANCE * 2 / NUMBEROFGRIDS), -MAXDISTANCE + SPACING + ii - (MAXDISTANCE * 2 / NUMBEROFGRIDS) };
+                rectangleBottomRight = { -MAXDISTANCE + i - SPACING, -MAXDISTANCE + ii - SPACING };
+                drawRectangle(rectangleTopleft, rectangleBottomRight);
+            }
         }
 
         /* Swap front and back buffers */

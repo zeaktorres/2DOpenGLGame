@@ -1,10 +1,7 @@
 ﻿  Application.cpp
-C:\Users\Zeak\Desktop\Game Development\2DOpenGLGame\2DOpenGLGame\src\GameLogic\GameLogic.h(29,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Zeak\Desktop\Game Development\2DOpenGLGame\2DOpenGLGame\src\GameLogic\GameLogic.h(57,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Zeak\Desktop\Game Development\2DOpenGLGame\2DOpenGLGame\src\GameLogic\GameLogic.h(57,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Generating code
-  Finished generating code
-  1 of 397 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
+  1 of 464 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
   2DOpenGLGame.vcxproj -> C:\Users\Zeak\Desktop\Game Development\2DOpenGLGame\Release\2DOpenGLGame.exe

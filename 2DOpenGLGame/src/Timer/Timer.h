@@ -1,6 +1,5 @@
 #ifndef TIMER_H
 #define TIMER_H
-#pragma once
 #include <chrono>
 #include <memory>
 #include <functional>
@@ -15,7 +14,7 @@ private:
     bool running = false;
 public:
     void start(Grid* squareGrid, std::vector<Point> pattern);
-    void quickChange(Grid* squareGrid, Point point, std::vector<int> * color);
+    void quickChange(Grid* squareGrid, Point point, std::vector<int> color);
     bool getRunning() { return this->running; };
     void setRunning(bool running) { this->running = running; };
 };

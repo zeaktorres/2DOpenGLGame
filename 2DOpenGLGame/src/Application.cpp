@@ -10,7 +10,7 @@ int main(void)
 {
     /* Define bounds */
     float MAXDISTANCE = 0.9f;
-    float COLUMNS = 4;
+    float COLUMNS = 3;
     float ROWS = 4;
     float SPACING = 0.05f;
     int WINDOW_WIDTH = 640;

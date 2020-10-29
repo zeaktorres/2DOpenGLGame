@@ -1,6 +1,3 @@
-#pragma once
-#include <GLFW\glfw3.h>
-#include <iostream>
 #ifndef MOUSE_H
 #define MOUSE_H
 static bool clicked;

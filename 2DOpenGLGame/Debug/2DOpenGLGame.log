@@ -1,2 +1,6 @@
-﻿  Application.cpp
+﻿  Grid.cpp
+C:\Users\Zeak\Desktop\Game Development\2DOpenGLGame\2DOpenGLGame\src\Grid\Grid.cpp(14,18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Zeak\Desktop\Game Development\2DOpenGLGame\2DOpenGLGame\src\Grid\Grid.cpp(15,18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Zeak\Desktop\Game Development\2DOpenGLGame\2DOpenGLGame\src\Grid\Grid.cpp(65,36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Zeak\Desktop\Game Development\2DOpenGLGame\2DOpenGLGame\src\Grid\Grid.cpp(65,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   2DOpenGLGame.vcxproj -> C:\Users\Zeak\Desktop\Game Development\2DOpenGLGame\Debug\2DOpenGLGame.exe

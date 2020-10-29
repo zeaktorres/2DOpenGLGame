@@ -12,6 +12,7 @@ public:
 	void draw();
 	void drawRectangle(Point topLeft, Point bottemRight, std::vector<int> colorOfSquare);
 	void changeColor(int row, int column, std::vector<int> * colors);
+	Point getPointFromXposYPos(double xPos, double yPos, int WINDOW_LENGTH, int WINDOW_WIDTH);
 	int getMaxX() {
 		return this->maxX;
 	}

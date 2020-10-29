@@ -1,4 +1,5 @@
 #include "Grid.h"
+#include <iostream>
 void Grid::drawRectangle(Point topLeft, Point bottemRight, std::vector<int> colorOfSquare) {
     glColor3ub(colorOfSquare.at(0), colorOfSquare.at(1), colorOfSquare.at(2));
     glBegin(GL_QUADS);
@@ -36,4 +37,36 @@ void Grid::draw() {
 }
 void Grid::changeColor(int row, int column, std::vector<int> * colors) {
     this->grid.at(row)->at(column)->changeColor(colors);
+}
+
+Point Grid::getPointFromXposYPos(double xPos, double yPos, int WINDOW_LENGTH, int WINDOW_WIDTH) {
+    Point* topLeft;
+    Point * bottomRight;
+    std::vector<int>* myV = new std::vector<int>{ 0, 255, 255 };
+    double xMin, xMax, yMin, yMax;
+    int columnN = 0;
+    int rowN = this->getMaxY() - 1;
+    xPos -= WINDOW_WIDTH / 2;
+    yPos -= WINDOW_LENGTH / 2;
+    xPos = xPos / (WINDOW_WIDTH / 2);
+    yPos = yPos / (WINDOW_LENGTH / 2);
+    for (std::vector<Square*>* row : grid) {
+        for (Square* square : *row) {
+            topLeft = square->getTopLeft();
+            bottomRight = square->getBottemRight();
+
+            xMin = topLeft->x;
+            xMax = bottomRight->x;
+            yMax = bottomRight->y;
+            yMin = topLeft->y;
+            
+            if (xMin < xPos && xMax > xPos && yMin < yPos && yMax > yPos) {
+                return Point(rowN, columnN);
+            }
+            columnN++;
+        }
+        columnN = 0;
+        rowN--;
+    }
+    return Point(-1, -1);
 }

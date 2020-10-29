@@ -4,15 +4,17 @@
 #include <stdlib.h> 
 #include "Grid/Grid.h"
 #include "Timer/Timer.h"
+#include "GameLogic/GameLogic.h"
 #include <string>
-
 int main(void)
 {
     /* Define bounds */
     float MAXDISTANCE = 0.9f;
     float COLUMNS = 4;
-    float ROWS = 3;
+    float ROWS = 4;
     float SPACING = 0.05f;
+    int WINDOW_WIDTH = 640;
+    int WINDOW_LENGTH = 480;
     std::vector<int> COLORS = std::vector<int>{ 255, 255, 255 };
     std::vector<float> topLeft = { -0.9f, 0.9f };
     std::vector<float> topRight = { 0.9f, 0.9f };
@@ -27,7 +29,7 @@ int main(void)
         return -1;
 
     /* Create a windowed mode window and its OpenGL context */
-    window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
+    window = glfwCreateWindow(WINDOW_WIDTH, WINDOW_LENGTH, "Hello World", NULL, NULL);
     if (!window)
     {
         glfwTerminate();
@@ -36,18 +38,15 @@ int main(void)
 
     /* Make the window's context current */
     glfwMakeContextCurrent(window);
-
+    GameLogic game = GameLogic(MAXDISTANCE, ROWS, COLUMNS, SPACING, COLORS, window, WINDOW_LENGTH, WINDOW_WIDTH);
+    game.start();
     /* Loop until the user closes the window */
-    Grid * squareGrid = new Grid();
-    squareGrid->init(MAXDISTANCE, ROWS, COLUMNS, SPACING, COLORS);
-    Timer myTimer = Timer();
-    myTimer.init(squareGrid);
     while (!glfwWindowShouldClose(window))
     {
         glClear(GL_COLOR_BUFFER_BIT);
 
         /* Draw */
-        squareGrid->draw();
+        game.play();
 
         /* Swap front and back buffers */
         glfwSwapBuffers(window);

@@ -1,3 +1,5 @@
 # 2DOpenGLGame
 
-Game will be a memory match game with dynamic grids
+A memory match game with dynamic grids:
+
+![](game.gif)
